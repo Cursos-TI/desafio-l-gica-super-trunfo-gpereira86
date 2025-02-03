@@ -19,7 +19,8 @@ int main() {
     float densidadePopulacional_c1, densidadePopulacional_c2;
     float pibPerCapita_c1, pibPerCapita_c2;
     float superPoder_c1, superPoder_c2;
-    char criterio[30];
+    int escolhaCriterio;
+    char *cidadeVencedora;
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -59,7 +60,7 @@ int main() {
 
     densidadePopulacional_c1 = (float)populacao_c1 / area_c1;
     pibPerCapita_c1 = (pib_c1 * 1000000.0) / (float)populacao_c1;
-    superPoder_c1 = (float)(populacao_c1 + pontos_turisticos_c1) + area_c1 + pib_c1 + densidadePopulacional_c1 + pibPerCapita_c1;
+    superPoder_c1 = (float)populacao_c1 + (float)pontos_turisticos_c1 + area_c1 + pib_c1 + densidadePopulacional_c1 + pibPerCapita_c1;
     
     
     printf("\n------------------------------------\n");
@@ -99,7 +100,7 @@ int main() {
 
     densidadePopulacional_c2 = (float)populacao_c2 / area_c2;
     pibPerCapita_c2 = (pib_c2 * 1000000.0) / (float)populacao_c2;
-    superPoder_c2 = (float)(populacao_c2 + pontos_turisticos_c2) + area_c2 + pib_c2 + densidadePopulacional_c2 + pibPerCapita_c2;
+    superPoder_c2 = (float)populacao_c2 + (float)pontos_turisticos_c2 + area_c2 + pib_c2 + densidadePopulacional_c2 + pibPerCapita_c2;
     
     printf("\n------------------------------------\n");
     printf("Carta %s cadastrada com sucesso\n", cod_cidade_c2);
@@ -183,8 +184,21 @@ int main() {
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
 
     // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);    
+    // printf("A cidade vencedora é: %s\n", cidadeVencedora); 
     
+    
+
+    printf("Critério população escolhido para Batalha\n");
+    printf("=============================================\n\n");
+
+    if (populacao_c1 > populacao_c2){
+        cidadeVencedora = cod_cidade_c1; 
+    } else {
+        cidadeVencedora = cod_cidade_c2;
+    }
+
+    printf("E a A cidade vencedora é: %s (código: %s)\n", nome_cidade_c2, cidadeVencedora);
+
 
     return 0;
 }
