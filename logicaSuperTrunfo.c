@@ -75,7 +75,7 @@ int main() {
     printf("Número de pontos turísticos: %d\n", pontos_turisticos_c1);
     printf("Densidade Populacional: %.5f habitantes/km²\n", densidadePopulacional_c1);
     printf("PIB per capita Populacional: %.2f UM$ por habidatente\n", pibPerCapita_c1);
-    printf("Super poder: %.3f", superPoder_c1);
+    printf("Super poder: %.3f\n", superPoder_c1);
     printf("------------------------------------\n");
     printf("\n************************************\n\n");
 
@@ -114,7 +114,7 @@ int main() {
     printf("Número de pontos turísticos: %d\n", pontos_turisticos_c2);
     printf("Densidade Populacional: %.5f habitantes/km²\n", densidadePopulacional_c2);
     printf("PIB per capita Populacional: %.2f UM$ por habidatente\n", pibPerCapita_c2);
-    printf("Super poder: %.3f", superPoder_c2);
+    printf("Super poder: %.3f\n", superPoder_c2);
     printf("------------------------------------\n");
     printf("\n************************************\n\n"); 
 
@@ -195,8 +195,11 @@ int main() {
     printf("4. Densidade Populacional\n");
     printf("5. PIB per capita\n");
     printf("6. Super Poder\n");
-    printf("Escolha: ");
+    printf("Escolha o critério 1: ");
     scanf("%d", &opcao);
+
+    printf("Escolha o critério 2: ");
+    scanf("%d", &opcao2);
 
     cidadeVencedora = cod_cidade_c2;
     cidadeVencedora2 = cod_cidade_c2;
@@ -443,53 +446,6 @@ int main() {
     } else {
         printf("Erro de sistema!");
     }
-
-
-
-
-
-    
-
-    if (opcaoRespostaJogo == 1 && opcaoRespostaJogo2 == 1) {
-
-        printf("Ambos os critérios escolhidos inválidos! Jogo encerrado.\n");
-
-    } else if(opcaoRespostaJogo == 2 && opcaoRespostaJogo2 == 2) {
-
-        printf("Empate! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
-
-    } else if(opcaoRespostaJogo == 1 && opcaoRespostaJogo2 != 1){
-
-        printf("Critério 1 inválido! Comparando apenas o Critério 2\n");
-
-        printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
-        printf("=============================================\n\n");
-        printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
-
-    }  else if(opcaoRespostaJogo != 1 && opcaoRespostaJogo2 == 1){
-
-        printf("Critério 1 inválido! Comparando apenas o Critério 2\n");
-            
-        printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
-        printf("=============================================\n\n");
-        printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
-        
-    } else {
-        
-    }
-
-
-    // switch (opcaoRespostaJogo){
-    // case 1:
-    //     printf("Critério inválido! Jogo encerrado./n");
-    //     break;
-    // case 2:
-    //     printf("Empate! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
-    //     break;    
-    // default:
-    //     printf("E a a cidade vencedora é: %s\n", cidadeVencedora);
-    //     break;
-    // }
 
 
     return 0;
