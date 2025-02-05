@@ -21,8 +21,8 @@ int main() {
     float superPoder_c1, superPoder_c2;
     int opcao, opcaoRespostaJogo = 0;
     int opcao2, opcaoRespostaJogo2 = 0;
-    char *cidadeVencedora, *criterioEscolhido;
-    char *cidadeVencedora2, *criterioEscolhido2;
+    char cidadeVencedora[50], *criterioEscolhido;
+    char cidadeVencedora2[50], *criterioEscolhido2;
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -203,17 +203,18 @@ int main() {
 
     printf("\n#### INICIANDO O JOGO ####\n\n");
 
-    cidadeVencedora = cod_cidade_c2;
-    cidadeVencedora2 = cod_cidade_c2;
+    strcpy(cidadeVencedora, cod_cidade_c2);
+
+    strcpy(cidadeVencedora2, cod_cidade_c2);
 
     switch (opcao) {
     case 1:
         criterioEscolhido = "POPULAÇÃO";
 
         if(populacao_c1 == populacao_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (populacao_c1 > populacao_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1);
         }
 
         break;
@@ -221,9 +222,9 @@ int main() {
         criterioEscolhido = "ÁREA";
 
         if(area_c1 == area_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (area_c1 > area_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1);
         }
 
         break;
@@ -231,9 +232,9 @@ int main() {
         criterioEscolhido = "PIB";
 
         if(pib_c1 == pib_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (pib_c1 > pib_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1);
         }
 
         break;
@@ -241,9 +242,9 @@ int main() {
         criterioEscolhido = "DENSIDADE POPULACIONAL";
 
         if(densidadePopulacional_c1 == densidadePopulacional_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (densidadePopulacional_c1 < densidadePopulacional_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1); 
         }
 
         break;
@@ -251,9 +252,9 @@ int main() {
         criterioEscolhido = "PIB PER CAPITA";
 
         if(pibPerCapita_c1 == pibPerCapita_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (pibPerCapita_c1 > pibPerCapita_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1);
         }
 
         break;
@@ -261,9 +262,9 @@ int main() {
         criterioEscolhido = "SUPER PODER";
 
         if(superPoder_c1 == superPoder_c2){
-            cidadeVencedora = "Empate";
+            strcpy(cidadeVencedora, "Empate");
         } else if (superPoder_c1 > superPoder_c2){
-            cidadeVencedora = cod_cidade_c1; 
+            strcpy(cidadeVencedora, cod_cidade_c1);
         }
 
         break;
@@ -273,7 +274,7 @@ int main() {
         break;
     }   
 
-    if(cidadeVencedora == 'empate'){
+    if(cidadeVencedora == "empate") {
         opcaoRespostaJogo = 2;
     }
 
@@ -285,9 +286,9 @@ int main() {
         criterioEscolhido2 = "POPULAÇÃO";
 
         if(populacao_c1 == populacao_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (populacao_c1 > populacao_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1); 
         }
 
         break;
@@ -295,9 +296,9 @@ int main() {
         criterioEscolhido2 = "ÁREA";
 
         if(area_c1 == area_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (area_c1 > area_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1); 
         }
 
         break;
@@ -305,9 +306,9 @@ int main() {
         criterioEscolhido2 = "PIB";
 
         if(pib_c1 == pib_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (pib_c1 > pib_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1);  
         }
 
         break;
@@ -315,9 +316,9 @@ int main() {
         criterioEscolhido2 = "DENSIDADE POPULACIONAL";
 
         if(densidadePopulacional_c1 == densidadePopulacional_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (densidadePopulacional_c1 < densidadePopulacional_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1);  
         }
 
         break;
@@ -325,9 +326,9 @@ int main() {
         criterioEscolhido2 = "PIB PER CAPITA";
 
         if(pibPerCapita_c1 == pibPerCapita_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (pibPerCapita_c1 > pibPerCapita_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1); 
         }
 
         break;
@@ -335,9 +336,9 @@ int main() {
         criterioEscolhido2 = "SUPER PODER";
 
         if(superPoder_c1 == superPoder_c2){
-            cidadeVencedora2 = "Empate";
+            strcpy(cidadeVencedora2, "Empate");
         } else if (superPoder_c1 > superPoder_c2){
-            cidadeVencedora2 = cod_cidade_c1; 
+            strcpy(cidadeVencedora2, cod_cidade_c1); 
         }
 
         break;
@@ -347,8 +348,9 @@ int main() {
         break;
     }   
 
-    if(cidadeVencedora2 == 'empate'){
+    if(cidadeVencedora2 == "empate"){
         opcaoRespostaJogo2 = 2;
+        printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     }
 
 
@@ -399,6 +401,7 @@ int main() {
 
             printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
+
             printf("E a a cidade vencedora é: %s\n PARABÉNS!\n", cidadeVencedora2);
 
         } else {
@@ -425,11 +428,12 @@ int main() {
 
         } else if (opcaoRespostaJogo2 == 0){
 
+            printf("\n=============================================\n");
             printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
             printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
 
-            printf("###### COMPUTANDO PONTUAÇÃO... ######");
+            printf("\n\n###### COMPUTANDO PONTUAÇÃO... ######\n\n");
 
             if(cidadeVencedora == cidadeVencedora2){
 
@@ -437,7 +441,7 @@ int main() {
                 
             } else {
 
-                printf("UAU, EMPATE! Ambas as cidades (%s e %s) tiveram a mesma pontuação,\nentão não há ganhadores.", cod_cidade_c1, cod_cidade_c2);
+                printf("UAU, EMPATE! Ambas as cidades (%s e %s) tiveram a mesma pontuação,\nentão não há ganhadores.\n\n", cod_cidade_c1, cod_cidade_c2);
 
             }
 
