@@ -19,8 +19,10 @@ int main() {
     float densidadePopulacional_c1, densidadePopulacional_c2;
     float pibPerCapita_c1, pibPerCapita_c2;
     float superPoder_c1, superPoder_c2;
-    int escolhaCriterio;
-    char *cidadeVencedora;
+    int opcao, opcaoRespostaJogo = 0;
+    int opcao2, opcaoRespostaJogo2 = 0;
+    char *cidadeVencedora, *criterioEscolhido;
+    char *cidadeVencedora2, *criterioEscolhido2;
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -186,18 +188,308 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora); 
     
-    
+    printf("Escolha o critério de comparção entre as cartas:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Densidade Populacional\n");
+    printf("5. PIB per capita\n");
+    printf("6. Super Poder\n");
+    printf("Escolha: ");
+    scanf("%d", &opcao);
 
-    printf("Critério população escolhido para Batalha\n");
-    printf("=============================================\n\n");
+    cidadeVencedora = cod_cidade_c2;
+    cidadeVencedora2 = cod_cidade_c2;
 
-    if (populacao_c1 > populacao_c2){
-        cidadeVencedora = cod_cidade_c1; 
-    } else {
-        cidadeVencedora = cod_cidade_c2;
+    switch (opcao) {
+    case 1:
+        criterioEscolhido = "POPULAÇÃO";
+
+        if(populacao_c1 == populacao_c2){
+            cidadeVencedora = "Empate";
+        } else if (populacao_c1 > populacao_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    case 2:
+        criterioEscolhido = "ÁREA";
+
+        if(area_c1 == area_c2){
+            cidadeVencedora = "Empate";
+        } else if (area_c1 > area_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    case 3:
+        criterioEscolhido = "PIB";
+
+        if(pib_c1 == pib_c2){
+            cidadeVencedora = "Empate";
+        } else if (pib_c1 > pib_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    case 4:
+        criterioEscolhido = "DENSIDADE POPULACIONAL";
+
+        if(densidadePopulacional_c1 == densidadePopulacional_c2){
+            cidadeVencedora = "Empate";
+        } else if (densidadePopulacional_c1 < densidadePopulacional_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    case 5:
+        criterioEscolhido = "PIB PER CAPITA";
+
+        if(pibPerCapita_c1 == pibPerCapita_c2){
+            cidadeVencedora = "Empate";
+        } else if (pibPerCapita_c1 > pibPerCapita_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    case 6:
+        criterioEscolhido = "SUPER PODER";
+
+        if(superPoder_c1 == superPoder_c2){
+            cidadeVencedora = "Empate";
+        } else if (superPoder_c1 > superPoder_c2){
+            cidadeVencedora = cod_cidade_c1; 
+        }
+
+        break;
+    default:
+        printf("Opção inválida!\nJogo encerrado.\n");
+        opcaoRespostaJogo = 1;
+        break;
+    }   
+
+    if(cidadeVencedora == 'empate'){
+        opcaoRespostaJogo = 2;
     }
 
-    printf("E a A cidade vencedora é: %s (código: %s)\n", nome_cidade_c2, cidadeVencedora);
+
+
+    switch (opcao2) {
+    case 1:
+        criterioEscolhido2 = "POPULAÇÃO";
+
+        if(populacao_c1 == populacao_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (populacao_c1 > populacao_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    case 2:
+        criterioEscolhido2 = "ÁREA";
+
+        if(area_c1 == area_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (area_c1 > area_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    case 3:
+        criterioEscolhido2 = "PIB";
+
+        if(pib_c1 == pib_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (pib_c1 > pib_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    case 4:
+        criterioEscolhido2 = "DENSIDADE POPULACIONAL";
+
+        if(densidadePopulacional_c1 == densidadePopulacional_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (densidadePopulacional_c1 < densidadePopulacional_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    case 5:
+        criterioEscolhido2 = "PIB PER CAPITA";
+
+        if(pibPerCapita_c1 == pibPerCapita_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (pibPerCapita_c1 > pibPerCapita_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    case 6:
+        criterioEscolhido2 = "SUPER PODER";
+
+        if(superPoder_c1 == superPoder_c2){
+            cidadeVencedora2 = "Empate";
+        } else if (superPoder_c1 > superPoder_c2){
+            cidadeVencedora2 = cod_cidade_c1; 
+        }
+
+        break;
+    default:
+        printf("Opção inválida!\nJogo encerrado.\n");
+        opcaoRespostaJogo2 = 1;
+        break;
+    }   
+
+    if(cidadeVencedora2 == 'empate'){
+        opcaoRespostaJogo2 = 2;
+    }
+
+
+
+    if(opcaoRespostaJogo == 1){
+
+        printf("Critério 1 inválido");
+
+        if(opcaoRespostaJogo2 == 1){
+
+            printf(" e critério 2 inválido. Jogo encerrado!\n");
+
+        } else if (opcaoRespostaJogo2 == 2){
+
+            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("EMPATE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
+            
+
+        } else if (opcaoRespostaJogo2 == 0){
+
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
+
+        } else {
+            printf("Erro de sistema!");
+        }
+
+    } else if(opcaoRespostaJogo == 2) {
+
+        printf("\n\nCritério %s escolhido para Batalha\n", criterioEscolhido);
+        printf("=============================================\n\n");
+        printf("EMPATE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n Ninguém marca ponto no primeiro critério.\n\n", cod_cidade_c1, cod_cidade_c2);
+
+        if(opcaoRespostaJogo2 == 1){
+
+            printf("Critério 2 inválido. Jogo encerrado sem ganhador!\n");
+
+        } else if (opcaoRespostaJogo2 == 2){
+
+            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("UAU! EMPATE NOVAMENTE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n e não há ganhadores.", cod_cidade_c1, cod_cidade_c2);
+            
+
+        } else if (opcaoRespostaJogo2 == 0){
+
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("E a a cidade vencedora é: %s\n PARABÉNS!\n", cidadeVencedora2);
+
+        } else {
+            printf("Erro de sistema!");
+        }
+
+
+    } else if(opcaoRespostaJogo == 0) {
+
+        printf("Critério %s escolhido para Batalha\n", criterioEscolhido);
+        printf("=============================================\n\n");
+        printf("E a a cidade vencedora é: %s\n", cidadeVencedora);
+
+        if(opcaoRespostaJogo2 == 1){
+
+            printf("Critério 2 inválido. Jogo encerrado!\n Cidade ganhadara com 1 ponto é: %s\n PARABÉNS!\n", cidadeVencedora);
+
+        } else if (opcaoRespostaJogo2 == 2){
+
+            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("EMPATE! Cidade ganhadara com 1 ponto é: %s\n PARABÉNS!\n", cidadeVencedora);
+            
+
+        } else if (opcaoRespostaJogo2 == 0){
+
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n\n");
+            printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
+
+            printf("###### COMPUTANDO PONTUAÇÃO... ######");
+
+            if(cidadeVencedora == cidadeVencedora2){
+
+                printf("Parabéns! A cidade %s Venceu a batalha!\n\n", cidadeVencedora);    
+                
+            } else {
+
+                printf("UAU, EMPATE! Ambas as cidades (%s e %s) tiveram a mesma pontuação,\nentão não há ganhadores.", cod_cidade_c1, cod_cidade_c2);
+
+            }
+
+        } else {
+            printf("Erro de sistema!");
+        }
+
+
+    } else {
+        printf("Erro de sistema!");
+    }
+
+
+
+
+
+    
+
+    if (opcaoRespostaJogo == 1 && opcaoRespostaJogo2 == 1) {
+
+        printf("Ambos os critérios escolhidos inválidos! Jogo encerrado.\n");
+
+    } else if(opcaoRespostaJogo == 2 && opcaoRespostaJogo2 == 2) {
+
+        printf("Empate! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
+
+    } else if(opcaoRespostaJogo == 1 && opcaoRespostaJogo2 != 1){
+
+        printf("Critério 1 inválido! Comparando apenas o Critério 2\n");
+
+        printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+        printf("=============================================\n\n");
+        printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
+
+    }  else if(opcaoRespostaJogo != 1 && opcaoRespostaJogo2 == 1){
+
+        printf("Critério 1 inválido! Comparando apenas o Critério 2\n");
+            
+        printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+        printf("=============================================\n\n");
+        printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
+        
+    } else {
+        
+    }
+
+
+    // switch (opcaoRespostaJogo){
+    // case 1:
+    //     printf("Critério inválido! Jogo encerrado./n");
+    //     break;
+    // case 2:
+    //     printf("Empate! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
+    //     break;    
+    // default:
+    //     printf("E a a cidade vencedora é: %s\n", cidadeVencedora);
+    //     break;
+    // }
 
 
     return 0;
