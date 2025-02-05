@@ -201,6 +201,8 @@ int main() {
     printf("Escolha o critério 2: ");
     scanf("%d", &opcao2);
 
+    printf("\n#### INICIANDO O JOGO ####\n\n");
+
     cidadeVencedora = cod_cidade_c2;
     cidadeVencedora2 = cod_cidade_c2;
 
@@ -276,6 +278,7 @@ int main() {
     }
 
 
+    printf("\n##########################\n\n");
 
     switch (opcao2) {
     case 1:
