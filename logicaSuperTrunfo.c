@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
@@ -274,12 +275,9 @@ int main() {
         break;
     }   
 
-    if(cidadeVencedora == "empate") {
+    if(strcmp(cidadeVencedora, "Empate") == 0) {
         opcaoRespostaJogo = 2;
     }
-
-
-    printf("\n##########################\n\n");
 
     switch (opcao2) {
     case 1:
@@ -348,9 +346,8 @@ int main() {
         break;
     }   
 
-    if(cidadeVencedora2 == "empate"){
+    if(strcmp(cidadeVencedora2, "Empate") == 0){
         opcaoRespostaJogo2 = 2;
-        printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     }
 
 
@@ -365,13 +362,15 @@ int main() {
 
         } else if (opcaoRespostaJogo2 == 2){
 
-            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("\n=============================================\n");
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
             printf("EMPATE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n", cod_cidade_c1, cod_cidade_c2);
             
 
         } else if (opcaoRespostaJogo2 == 0){
 
+            printf("\n=============================================\n");
             printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
             printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
@@ -382,9 +381,10 @@ int main() {
 
     } else if(opcaoRespostaJogo == 2) {
 
-        printf("\n\nCritério %s escolhido para Batalha\n", criterioEscolhido);
+        printf("\n=============================================\n");
+        printf("Critério %s escolhido para Batalha\n", criterioEscolhido);
         printf("=============================================\n\n");
-        printf("EMPATE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n Ninguém marca ponto no primeiro critério.\n\n", cod_cidade_c1, cod_cidade_c2);
+        printf("EMPATE!\nAmbas as cidades (%s e %s) tiveram o mesmo resultado\nNinguém marca ponto no primeiro critério.\n\n", cod_cidade_c1, cod_cidade_c2);
 
         if(opcaoRespostaJogo2 == 1){
 
@@ -392,25 +392,28 @@ int main() {
 
         } else if (opcaoRespostaJogo2 == 2){
 
-            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("\n=============================================\n");
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
-            printf("UAU! EMPATE NOVAMENTE! Ambas as cidades (%s e %s) tiveram o mesmo resultado\n e não há ganhadores.", cod_cidade_c1, cod_cidade_c2);
+            printf("UAU! EMPATE NOVAMENTE!\nAmbas as cidades (%s e %s) tiveram o mesmo resultado e não há ganhador.\n\n", cod_cidade_c1, cod_cidade_c2);
             
 
         } else if (opcaoRespostaJogo2 == 0){
 
+            printf("\n=============================================\n");
             printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
             printf("=============================================\n\n");
 
             printf("E a a cidade vencedora é: %s\n PARABÉNS!\n", cidadeVencedora2);
 
         } else {
-            printf("Erro de sistema!");
+            printf("Erro de sistema!\n");
         }
 
 
     } else if(opcaoRespostaJogo == 0) {
 
+        printf("\n=============================================\n");
         printf("Critério %s escolhido para Batalha\n", criterioEscolhido);
         printf("=============================================\n\n");
         printf("E a a cidade vencedora é: %s\n", cidadeVencedora);
@@ -421,17 +424,18 @@ int main() {
 
         } else if (opcaoRespostaJogo2 == 2){
 
-            printf(".\n\nCritério %s escolhido para Batalha\n", criterioEscolhido2);
-            printf("=============================================\n\n");
-            printf("EMPATE! Cidade ganhadara com 1 ponto é: %s\n PARABÉNS!\n", cidadeVencedora);
+            printf("\n=============================================\n");
+            printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
+            printf("=============================================\n");
+            printf("\nEMPATE no critério %s!\n\n###### COMPUTANDO PONTUAÇÃO... ######\n\nA cidade ganhadora com 1 ponto é: %s\nPARABÉNS!\n", criterioEscolhido2, cidadeVencedora);
             
 
         } else if (opcaoRespostaJogo2 == 0){
 
             printf("\n=============================================\n");
             printf("Critério %s escolhido para Batalha\n", criterioEscolhido2);
-            printf("=============================================\n\n");
-            printf("E a a cidade vencedora é: %s\n", cidadeVencedora2);
+            printf("=============================================\n");
+            printf("\nE a a cidade vencedora é: %s\n", cidadeVencedora2);
 
             printf("\n\n###### COMPUTANDO PONTUAÇÃO... ######\n\n");
 
@@ -446,14 +450,14 @@ int main() {
             }
 
         } else {
-            printf("Erro de sistema!");
+            printf("Erro de sistema!\n");
         }
 
 
     } else {
-        printf("Erro de sistema!");
+        printf("Erro de sistema!\n");
     }
 
-
+    printf("\n*********************************************\n");
     return 0;
 }
