@@ -275,9 +275,8 @@ int main() {
         break;
     }   
 
-    if(strcmp(cidadeVencedora, "Empate") == 0) {
-        opcaoRespostaJogo = 2;
-    }
+    opcaoRespostaJogo = strcmp(cidadeVencedora, "Empate") == 0 ? 2 : opcaoRespostaJogo;
+    
 
     switch (opcao2) {
     case 1:
@@ -346,9 +345,7 @@ int main() {
         break;
     }   
 
-    if(strcmp(cidadeVencedora2, "Empate") == 0){
-        opcaoRespostaJogo2 = 2;
-    }
+    opcaoRespostaJogo2 = strcmp(cidadeVencedora2, "Empate") == 0 ? 2 : opcaoRespostaJogo2;
 
 
 
